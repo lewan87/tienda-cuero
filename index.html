@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda de Cuero</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/fitros.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/productos.css" />
+    <link rel="stylesheet" href="styles/carrito.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <h1>Tienda de Cuero</h1>
+        <nav>
+            <ul class="nav-bar">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div id="carrito" onclick="abrirModalCarrito()">
+            <span>🛒 Carrito (<span id="cart-count">0</span>)</span>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="seccion">
+            <h2>Bienvenido a nuestra tienda</h2>
+            <p>Ofrecemos carteras, mochilas y productos de cuero de la mejor calidad artesanal. ¡Explora nuestro
+                catálogo y encontrá tu próximo compañero de aventuras!</p>
+        </section>
+
+        <!-- <section id="destacados" class="seccion">
+            <h2>Productos Destacados</h2>
+            <div id="productos-destacados" class="productos-grid"></div>
+            <div class="centrar">
+                <a href="productos.html" class="btn-ver-todo">Ver todos los productos</a>
+            </div>
+        </section> -->
+
+        <section id="productos" class="seccion">
+            <h2>Nuestros Productos</h2>
+            <div id="filtros">
+                <label for="filtro-categoria">Categoría:</label>
+                <select id="filtro-categoria">
+                    <option value="todas">Todas</option>
+                    <option value="Carteras">Carteras</option>
+                    <option value="Mochilas">Mochilas</option>
+                    <option value="Bolsos">Bolsos</option>
+                    <option value="Otros">Otros</option>
+                </select>
+
+                <label for="filtro-precio">Precio máximo:</label>
+                <input type="range" id="filtro-precio" min="0" max="200000" step="1000" value="200000">
+                <span id="precio-valor">$200000</span>
+
+                <label for="filtro-busqueda">Buscar:</label>
+                <input type="text" id="filtro-busqueda" placeholder="Nombre o descripción">
+
+                <label for="ordenar-por">Ordenar por:</label>
+                <select id="ordenar-por">
+                    <option value="default">--</option>
+                    <option value="precio-asc">Precio: menor a mayor</option>
+                    <option value="precio-desc">Precio: mayor a menor</option>
+                    <option value="nombre-asc">Nombre: A-Z</option>
+                    <option value="nombre-desc">Nombre: Z-A</option>
+                </select>
+
+                <button id="btn-aplicar-filtros">Aplicar</button>
+                <button id="btn-limpiar-filtros">Limpiar</button>
+            </div>
+
+            <div id="productos-container"></div>
+        </section>
+
+        <section id="contacto" class="seccion">
+            <h2>Contacto</h2>
+            <form id="form-contacto">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Dentro del <body>, reemplaza la sección #carrito-detalle por esto: -->
+        <section id="carrito-detalle" class="carrito-detalle oculto">
+            <div id="modal-carrito" class="modal-carrito">
+                <div class="modal-carrito-contenido">
+                    <span class="cerrar-carrito" onclick="cerrarModalCarrito()">&times;</span>
+                    <h2>Tu carrito</h2>
+                    <ul id="lista-carrito"></ul>
+                    <p style="font-weight: bold;">Total: $<span id="total">0</span></p>
+                    <button onclick="vaciarCarrito()">Vaciar carrito</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="notificaciones" class="contenedor-notificaciones"></div>
+    </main>
+
+
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/productos.js"></script>
+
+</body>
+
+</html>

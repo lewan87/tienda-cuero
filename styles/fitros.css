@@ -1,0 +1,75 @@
+#filtros {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    background-color: #e7e7e7;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin: 2rem auto;
+    max-width: 900px;
+    justify-content: center;
+}
+
+#filtros label {
+    font-weight: 600;
+    margin-right: 0.5rem;
+    color: #333;
+}
+
+#filtros select,
+#filtros input[type="range"] {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
+
+#precio-valor {
+    font-weight: bold;
+    color: #2a7ae4;
+}
+
+#filtros button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btn-aplicar-filtros {
+    background-color: #2a7ae4;
+    color: white;
+}
+
+#btn-aplicar-filtros:hover {
+    background-color: #1c5bbf;
+}
+
+#btn-limpiar-filtros {
+    background-color: #a3a3a3;
+    color: #fff;
+}
+
+#btn-limpiar-filtros:hover {
+    background-color: #909090;
+}
+
+#filtros input[type="text"],
+#filtros select {
+    min-width: 150px;
+}
+
+#filtros input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
