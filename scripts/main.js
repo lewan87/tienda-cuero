@@ -3,7 +3,7 @@ import { productos } from './productos.js';
 document.addEventListener("DOMContentLoaded", () => {
 
     renderizarProductos();
-    
+
     const productosContainer = document.getElementById("productos-container");
 
     productosContainer.addEventListener("click", (e) => {
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    
+
     // Botón para abrir el modal
     const btnAbrirCarrito = document.getElementById("btn-abrir-carrito");
     if (btnAbrirCarrito) {
@@ -114,6 +114,7 @@ function renderizarProductos() {
     })
 }
 
+/*
 function mostrarProductosDestacados() {
     const contenedor = document.getElementById("productos-destacados");
     const productosDestacados = productos.slice(0, 4); // Ejemplo: mostrar solo 4 productos
@@ -134,7 +135,7 @@ function mostrarProductosDestacados() {
 }
 
 document.addEventListener("DOMContentLoaded", mostrarProductosDestacados);
-
+*/
 
 
 /*************************** CARRITO ************************/
@@ -272,7 +273,7 @@ window.actualizarCarrito = actualizarCarrito;
 
 /*************************** NOTIFICACIONES ************************/
 
-function mostrarNotificacion(mensaje, tipo = "agregado") {
+export function mostrarNotificacion(mensaje, tipo = "agregado") {
     const contenedor = document.getElementById("notificaciones");
     const toast = document.createElement("div");
     toast.classList.add("toast", tipo);
@@ -286,6 +287,8 @@ function mostrarNotificacion(mensaje, tipo = "agregado") {
             emoji = "❌"; break;
         case "vaciado":
             emoji = "🧹"; break;
+        case "contacto":
+            emoji = "📝"; break;
     }
 
     toast.textContent = `${emoji} ${mensaje}`;
